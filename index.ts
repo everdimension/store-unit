@@ -1,3 +1,4 @@
+import type React from "react";
 import { createNanoEvents as createEmitter } from "nanoevents";
 import type { Emitter } from "nanoevents";
 
@@ -44,4 +45,37 @@ export class Store<S> {
     this.state = newState;
     this.emitter.emit("change", this.state, prevState);
   }
+}
+
+export class FormDataStore<
+  FormDataObject extends { [key: string]: any }
+> extends Store<FormDataObject> {
+  initialState: FormDataObject;
+
+  constructor(initialState: FormDataObject) {
+    super(initialState);
+    this.initialState = initialState;
+  }
+
+  setValue = (
+    key: keyof FormDataObject,
+    value: FormDataObject[keyof FormDataObject]
+  ) => {
+    this.setState((state) =>
+      state[key] === value ? state : { ...state, [key]: value }
+    );
+  };
+
+  handleChange = (
+    event: React.FormEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    this.setValue(
+      event.currentTarget.name as keyof FormDataObject,
+      event.currentTarget.value
+    );
+  };
+
+  reset = () => {
+    this.setState(this.initialState);
+  };
 }
