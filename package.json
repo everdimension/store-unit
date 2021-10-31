@@ -1,0 +1,26 @@
+{
+  "name": "store-unit",
+  "version": "1.0.0",
+  "description": "A watchable data unit for UIs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everdimension/store-unit.git"
+  },
+  "keywords": [
+    "store",
+    "reactive"
+  ],
+  "author": "everdimension",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everdimension/store-unit/issues"
+  },
+  "homepage": "https://github.com/everdimension/store-unit#readme",
+  "dependencies": {
+    "nanoevents": "^6.0.2"
+  }
+}
