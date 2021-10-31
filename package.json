@@ -2,8 +2,18 @@
   "name": "store-unit",
   "version": "1.0.0",
   "description": "A watchable data unit for UIs",
-  "main": "index.ts",
+  "type": "module",
+  "source": "index.ts",
+  "exports": {
+    "require": "./lib/store-unit.cjs",
+    "default": "./lib/store-unit.modern.js"
+  },
+  "main": "./lib/store-unit.cjs",
+  "module": "./lib/store-unit.module.js",
+  "unpkg": "./lib/store-unit.umd.js",
   "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +32,8 @@
   "homepage": "https://github.com/everdimension/store-unit#readme",
   "dependencies": {
     "nanoevents": "^6.0.2"
+  },
+  "devDependencies": {
+    "microbundle": "^0.14.1"
   }
 }
