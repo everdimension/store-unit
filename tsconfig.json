@@ -1,0 +1,16 @@
+{
+  "include": ["./index.ts"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "pretty": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"]
+  }
+}
