@@ -2,11 +2,10 @@
   "name": "store-unit",
   "version": "1.0.2",
   "description": "A watchable data unit for UIs",
-  "type": "module",
   "source": "index.ts",
   "typings": "lib/index.d.ts",
   "exports": "./lib/store-unit.cjs",
-  "main": "lib/store-unit.cjs",
+  "main": "lib/store-unit.js",
   "module": "./lib/store-unit.module.js",
   "unpkg": "./lib/store-unit.umd.js",
   "scripts": {
