@@ -5,11 +5,8 @@
   "type": "module",
   "source": "index.ts",
   "typings": "lib/index.d.ts",
-  "exports": {
-    "require": "./lib/store-unit.cjs",
-    "default": "./lib/store-unit.modern.js"
-  },
-  "main": "./lib/store-unit.cjs",
+  "exports": "./lib/store-unit.cjs",
+  "main": "lib/store-unit.cjs",
   "module": "./lib/store-unit.module.js",
   "unpkg": "./lib/store-unit.umd.js",
   "scripts": {
