@@ -17,7 +17,7 @@ const initialValue = { count: 42 };
 
 const store = new Store(initialValue);
 
-const unlisten = store.addEventListener("change", (newState, previousState) => {
+const unlisten = store.on("change", (newState, previousState) => {
   updateSomething(state);
 });
 

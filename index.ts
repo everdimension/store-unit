@@ -5,7 +5,7 @@ interface Events<State> {
   change: (state: State, prevState: State) => void;
 }
 
-interface SetStateAction<S> {
+export interface SetStateAction<S> {
   (state: S): S;
 }
 
@@ -22,7 +22,7 @@ export class Store<S> {
     this.emitter = createEmitter<Events<S>>();
   }
 
-  addEventListener<K extends keyof Events<S>>(event: K, cb: Events<S>[K]) {
+  on<K extends keyof Events<S>>(event: K, cb: Events<S>[K]) {
     return this.emitter.on(event, cb);
   }
 
@@ -43,6 +43,10 @@ export class Store<S> {
     const prevState = this.state;
     this.state = newState;
     this.emitter.emit("change", this.state, prevState);
+  }
+
+  setStateSilent(state: S) {
+    this.state = state;
   }
 }
 
