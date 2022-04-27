@@ -1,4 +1,3 @@
-import type React from "react";
 import { createNanoEvents as createEmitter } from "nanoevents";
 import type { Emitter } from "nanoevents";
 
@@ -66,13 +65,16 @@ export class FormDataStore<
     );
   };
 
-  handleChange = (
-    event: React.FormEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    this.setValue(
-      event.currentTarget.name as keyof FormDataObject,
-      event.currentTarget.value
-    );
+  handleChange = (event: Event) => {
+    if (event.currentTarget) {
+      const target = event.currentTarget as
+        | HTMLInputElement
+        | HTMLSelectElement;
+      this.setValue(
+        target.name as keyof FormDataObject,
+        target.value as FormDataObject[keyof FormDataObject]
+      );
+    }
   };
 
   reset = () => {

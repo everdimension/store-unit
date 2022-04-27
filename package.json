@@ -4,6 +4,7 @@
   "description": "A watchable data unit for UIs",
   "type": "module",
   "source": "index.ts",
+  "typings": "lib/index.d.ts",
   "exports": {
     "require": "./lib/store-unit.cjs",
     "default": "./lib/store-unit.modern.js"
