@@ -4,7 +4,7 @@
   "description": "A watchable data unit for UIs",
   "source": "index.ts",
   "typings": "lib/index.d.ts",
-  "exports": "./lib/store-unit.cjs",
+  "exports": "./lib/store-unit.js",
   "main": "lib/store-unit.js",
   "module": "./lib/store-unit.module.js",
   "unpkg": "./lib/store-unit.umd.js",
