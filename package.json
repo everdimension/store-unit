@@ -1,6 +1,6 @@
 {
   "name": "store-unit",
-  "version": "1.0.3-1",
+  "version": "1.0.3",
   "description": "A watchable data unit for UIs",
   "source": "index.ts",
   "typings": "lib/index.d.ts",
