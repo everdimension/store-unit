@@ -31,7 +31,7 @@
     "nanoevents": "^6.0.2"
   },
   "devDependencies": {
-    "microbundle": "^0.14.1",
-    "react": "^17.0.2"
+    "microbundle": "^0.15.1",
+    "react": "^18.2.0"
   }
 }
