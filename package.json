@@ -4,11 +4,14 @@
   "description": "A watchable data unit for UIs",
   "source": "index.ts",
   "typings": "lib/index.d.ts",
+  "type": "module",
   "exports": {
-    "types": "./lib/index.d.ts",
-    "require": "./lib/store-unit.cjs",
-    "default": "./lib/store-unit.js",
-    "import": "./lib/store-unit.module.js"
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/store-unit.cjs",
+      "default": "./lib/store-unit.module.js",
+      "import": "./lib/store-unit.module.js"
+    }
   },
   "main": "lib/store-unit.js",
   "module": "./lib/store-unit.module.js",
