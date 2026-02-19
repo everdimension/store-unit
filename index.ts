@@ -49,39 +49,3 @@ export class Store<S> {
     this.state = state;
   }
 }
-
-export class FormDataStore<
-  FormDataObject extends { [key: string]: any }
-> extends Store<FormDataObject> {
-  initialState: FormDataObject;
-
-  constructor(initialState: FormDataObject) {
-    super(initialState);
-    this.initialState = initialState;
-  }
-
-  setValue = (
-    key: keyof FormDataObject,
-    value: FormDataObject[keyof FormDataObject]
-  ) => {
-    this.setState((state) =>
-      state[key] === value ? state : { ...state, [key]: value }
-    );
-  };
-
-  handleChange = (event: Event) => {
-    if (event.currentTarget) {
-      const target = event.currentTarget as
-        | HTMLInputElement
-        | HTMLSelectElement;
-      this.setValue(
-        target.name as keyof FormDataObject,
-        target.value as FormDataObject[keyof FormDataObject]
-      );
-    }
-  };
-
-  reset = () => {
-    this.setState(this.initialState);
-  };
-}
